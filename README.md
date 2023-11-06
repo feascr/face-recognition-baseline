@@ -5,9 +5,9 @@ To start training model type:
 ```bash
 python3 train.py
 ```
-This method wil use config file './train_config.yml'
+This script is using config file located at './train_config.yml'
 
-To use different config file type:
+To sprcify config file:
 ```bash
 python3 train.py --config path_to_file
 ```
