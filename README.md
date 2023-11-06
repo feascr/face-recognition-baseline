@@ -7,7 +7,7 @@ python3 train.py
 ```
 This script is using config file located at './train_config.yml'
 
-To sprcify config file:
+To specify config file:
 ```bash
 python3 train.py --config path_to_file
 ```
