@@ -1,0 +1,43 @@
+# model config
+model_name: simple_representation_learner
+pretrained_path: null
+
+backbone_name: iresnet50
+backbone_kwargs:
+    dropout: 0.4
+    num_features: 512
+
+head_name: fc-head
+head_kwargs:
+    embedding_size: 512
+    num_classes: 10572
+
+number_of_iterations: 100
+num_workers: 24
+use_amp: True
+device: cuda:0
+
+# data
+data:
+    batches_per_iteration: 4000
+    train_batch_size: 128
+
+    train_dataset: web_face
+    train_json_path: /path/to/web_face.json
+    train_sampler: weighted_sampler
+
+    val_dataset: lfw
+    val_json_path: /path/to/lfw.json
+    val_batch_size: 128
+
+
+# optimizer
+optim:
+    common_lr: 0.0003
+    backbone_lr: 0.0003
+    head_lr: 0.00003
+    weight_decay: 0.0001
+
+save_path: /path/to/artefacts/
+tensorboard_log_dir: /path/to/tensorboard/logs/
+seed: 12957
